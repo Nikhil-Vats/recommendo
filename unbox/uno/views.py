@@ -18,6 +18,7 @@ def get_item(dictionary, key):
 def data_handling(budget, profession, gender, location, prefer_to_chinese, majoruse, size):
     constant = 1
     global pro
+    pro = []
     phones = []
     score = [1, 1, 1, 1, 1, 1, 1, 1]
     for i in range(len(information)):
@@ -87,16 +88,18 @@ def data_handling(budget, profession, gender, location, prefer_to_chinese, major
             score[2] += constant
             score[5] += constant
 
+    print(score)
     for j in range(len(phones)):
         for i in range(7):
             phones[j][2][i] *= score[i] ## 0-Price 1-Name 2-Features
         phones[j].append(sum(phones[j][2])) # 3-Pro 4-Con 5-Link 6-Sum
 
-    phones.sort(key=lambda x: x[6], reverse=True)
-    top_three = deepcopy(phones[:3])
-    pro = deepcopy(top_three)
-    for i in range(len(top_three)):
-        print(top_three[i])
+    phones.sort(key=lambda x: x[-1], reverse=True)
+    pro = deepcopy(phones[:3])
+
+    for i in range(len(pro)):
+        print(pro[i])
+    return
 
 def index(request):
     context_dict = {'boldmessage': "Unbox"}
@@ -119,6 +122,7 @@ def question(request):
     return render(request, 'questions.html', {'form': forma})
 
 def product(request):
+    global pro
     context_dict = {'name': pro[0][1], 'price':pro[0][0], 'pro1':pro[0][3][0], 'pro2':pro[0][3][1], 'pro3':pro[0][3][2], 'con':pro[0][4][0], 'link':pro[0][5]}
     return render_to_response('product.html', {'dictionary': context_dict}, context_instance=RequestContext(request))
 

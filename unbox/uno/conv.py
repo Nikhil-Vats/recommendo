@@ -39,4 +39,4 @@ for i in your_list[1:]:
     i[3] = eval(i[3])
     i[4] = eval(i[4])
 
-print(your_list[1:])
+print(your_list[57:])

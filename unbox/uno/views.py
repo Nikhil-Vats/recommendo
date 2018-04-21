@@ -16,6 +16,8 @@ def get_item(dictionary, key):
     return dictionary.get(key)
 '''
 def data_handling(budget, profession, gender, location, prefer_to_chinese, majoruse, size):
+    print("\n\n\n\n\n\n\n\n",)
+    print("here",budget, profession, gender, location, prefer_to_chinese, majoruse, size)
     constant = 1
     global pro
     pro = []
@@ -44,34 +46,34 @@ def data_handling(budget, profession, gender, location, prefer_to_chinese, major
             if information[i][0] >= 50000:
                 phones.append(information[i])
 
-    if profession == "Student":
+    if profession == "student":
         score[2] += constant
         score[3] += constant
         score[4] += constant
 
-    elif profession == "Job":
+    elif profession == "job":
         score[2] += constant
         score[3] += constant
         score[5] += constant
 
-    elif profession == "Business":
+    elif profession == "business":
         score[5] += constant
         score[6] += constant
         score[0] += constant
 
-    elif profession == "Elderly Person":
+    elif profession == "retired":
         score[0] += constant
         score[6] += constant
 
-    if gender == "Male":
+    if gender == "male":
         score[4] += constant
 
-    elif gender == "Female":
+    elif gender == "female":
         score[3] += constant
 
-    if location == "Urban":
+    if location == "urban":
         score[3] += constant
-    elif location == "Rural":
+    elif location == "rural":
         score[0] += constant
 
     if prefer_to_chinese == "Yes":
@@ -96,7 +98,7 @@ def data_handling(budget, profession, gender, location, prefer_to_chinese, major
 
     phones.sort(key=lambda x: x[-1], reverse=True)
     pro = deepcopy(phones[:3])
-
+    del phones
     for i in range(len(pro)):
         print(pro[i])
     return
@@ -106,24 +108,29 @@ def index(request):
     return render(request, 'index.html', context=context_dict)
 
 def question(request):
-    forma = Question_f()
+    return render(request, 'questions.html')
 
-    if request.method == 'POST':
-        forma = Question_f(request.POST)
-        if forma.is_valid():
-            #print (type(forma.cleaned_data['budget']))
-            data_handling(forma.cleaned_data['budget'], forma.cleaned_data['profession'], forma.cleaned_data['gender'], forma.cleaned_data['location'], forma.cleaned_data['prefer_to_chinese'], forma.cleaned_data['majoruse'], forma.cleaned_data['size'])
-            #forma.save(commit=True)
-            return product(request)
-
-        else:
-            print(forma.errors)
-
-    return render(request, 'questions.html', {'form': forma})
+def search(request):
+    form = request.GET
+    print("\n\nHere\n\n\n")
+    print(form)
+    majoruse = []
+    if "selector2" in form:
+        majoruse.append('Videos & Movies')
+    if "selector3" in form:
+        majoruse.append('Gaming')
+    if "selector4" in form:
+        majoruse.append('Social Media')
+    if "selector5" in form:
+        majoruse.append('Photography')
+    data_handling(int(form['budget']), form['profession'], form['gender'], form['location'], 0, majoruse, 0)
+    return product(request)
 
 def product(request):
     global pro
-    context_dict = {'name': pro[0][1], 'price':pro[0][0], 'pro1':pro[0][3][0], 'pro2':pro[0][3][1], 'pro3':pro[0][3][2], 'con':pro[0][4][0], 'link':pro[0][5]}
+    context_dict = {'name': pro[0][1], 'price':pro[0][0], 'pro1':pro[0][3][0], 'pro2':pro[0][3][1], 'pro3':pro[0][3][2], 'con':pro[0][4][0], 'link':pro[0][5], 'name2': pro[1][1], 'name3': pro[2][1],
+    'pro21':pro[1][3][0], 'pro22':pro[1][3][1], 'pro23':pro[1][3][2], 'con2':pro[1][4][0],
+    'pro31':pro[2][3][0], 'pro32':pro[2][3][1], 'pro33':pro[2][3][2], 'con3':pro[2][4][0], 'score':pro[0][-1], 'score2':pro[1][-1], 'score3':pro[2][-1]}
     return render_to_response('product.html', {'dictionary': context_dict}, context_instance=RequestContext(request))
 
 def test(request):

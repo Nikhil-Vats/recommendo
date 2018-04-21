@@ -1,316 +1,448 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<!DOCTYPE html>
-	<html lang="sv">
-<head>
-	<meta charset="utf-8" />
-	<title>UnBox</title>
-	<meta name="description" content="" />
-	<meta name="author" content="admin" />
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<!-- Google Font -->
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,700italic,700,600,600italic,400italic,300italic,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<!-- Stylesheet -->
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/bootstrap.css" type="text/css"/>
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/stylesheet.css" type="text/css"/>
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/responsive.css" type="text/css" />
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/bootstrap-select.css" type="text/css"/>
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/lightbox.css" type="text/css"/>
-	<link rel="stylesheet" href="https://www.gadgetbox.us/assets/css/reating.css" type="text/css"/>
+<!DOCTYPE HTML>
 
-	<!-- FavIcon -->
-	<link rel="icon" type="image/x-icon" href="https://www.gadgetbox.us/assets/images/favicon.ico" />
-	<link rel="icon" type="image/png" href="https://www.gadgetbox.us/assets/images/favicon.png" />
-        <!-- Stylesheet -->
-
-	<!-- Javascript -->
-        <script type="text/javascript" src="https://www.gadgetbox.us/assets/js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="https://www.gadgetbox.us/assets/js/bootstrap.js"></script>
-        <script type="text/javascript" src="https://www.gadgetbox.us/assets/js/jquery.placeholder.1.3.min.js"></script>
-        <script type="text/javascript" src="https://www.gadgetbox.us/assets/js/lightbox.min.js"></script>
-
-   	<!--[if lte IE 8]><script src="https://www.gadgetbox.us/assets/js/html5shiv.js"></script><![endif]-->
-
-   	<script>
-	$(document).ready(function() {
-		$( ".playicon" ).click(function() {
-		$( ".custom-left" ).toggleClass( "slidein" );
-		$( ".custom_right" ).toggleClass( "slideout" );
-		$( ".fixblogmob" ).toggleClass( "displayblog" );
-		});
-		$( ".fixblogmob" ).click(function() {
-				$( ".fixblogmob" ).removeClass( "displayblog" );
-				$( ".custom-left" ).removeClass( "slidein" );
-				$( ".custom_right" ).removeClass( "slideout" );
-		});
-		$( ".searchsmall" ).click(function() {
-				$('.searcharea').slideToggle("fast");
-		});
-	});
-    </script>
-
-		<script type="text/javascript">
-
-				var searchBoxMainCata = '';
-				var searchBoxSubCata = '';
-				var searchtextValue = ''
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Recommendo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-		</script>
-		<script src="https://www.gadgetbox.us/assets/js/jquery.nestedAccordion.js"></script>
-		<script src="https://www.gadgetbox.us/assets/js/homePage.js"></script>
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-</head>
-<body>
-<div class="fixblogmob"></div>
-<div class="playicon">
-        <button class="navbar-toggle" type="button" >
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-        </button>
-</div>
-<!--<div id="floatMenu">
-        <a href="#"><i class="socl-float-fb"> </i></a>
-        <a href="#"><i class="socl-float-twtr"> </i></a>
-        <a href="#"><i class="socl-float-g-plus"> </i></a>
-        <a href="#"><i class="socl-float-printest"> </i></a>
-        <a href="#"><i class="socl-float-plus"> </i></a>
-        <a href="#"><i class="socl-float-linkdin"> </i></a>
-</div>	-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
-<div class="smalldevice">
-    <header class="header">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/static/css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="/static/css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+
+	<link rel="stylesheet" href="/static/css/owl.carousel.css">
+	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/static/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="/static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
 
 
 
 
 
+	<div class="gtco-loader"></div>
+
+	<div id="page">
 
 
+	<div class="page-inner">
+
+	<div id="head-top" style="position: absolute; width: 100%; top: 0; ">
+
+		<nav class="gtco-nav sticky-banner" role="navigation">
+			<div class="gtco-container">
+
+				<div class="row">
+					<div class="col-xs-12 text-center menu-1">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="portfolio.html">Team</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</nav>
+	</div>
+
+
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(/static/images/img_bg_4.jpg)" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row row-mt-15em">
+				<div class="col-md-12 mt-text text-center animate-box" data-animate-effect="fadeInUp">
+					<h1><strong>Recommendo</strong></h1>
+					<h2>Rethink | Reinvent | Recommend</h2>
+
+					<div class="text-center"><a href="/uno/questions/">Try it out</a></div>
 
 
 				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="flex-section gtco-gray-bg">
+		<div class="col-1">
+			<div class="text">
+
+				<div class="row row-pb-sm">
+					<div class="col-md-12">
+					<h2>How recommendo works?</h2>
+
+
+					<p>Imagine walking into a store to buy your next phone and the salesman suggests you a phone based on availability, profits and makes false promises.
+						</p>
+						<p>
+							That's not what Recommendo does. We provide personalized recommendations as per your needs, without any bias or agenda other than the shear motive to suggest the best product via our AI engine
+</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="col-2 flex-img" style="background-image: url(/static/images/img_1.jpg);"></div>
+	</div>
+
+	<div class="gtco-cover gtco-cover-sm" style="background-image: url(/static/images/img_bg_2.jpg)"  data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container text-center">
+			<div class="display-t">
+				<div class="display-tc">
+					<h1 class="animate-box">Never Stop Learning</h1>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex-section reverse">
+		<div class="col-1" style="padding-top: 50px;   padding-bottom: 50px;">
+			<div class="text">
+
+				<div class="row row-pb-sm">
+					<div class="col-md-12">
+						<h2>The tech behind</h2>
+						<p>Every expert review can not be specialized and every customer review can not be generalized. We are bridging this gap through the questionnaire and chat bot (coming soon) that is designed by Machine Learning and Social Psychology veterans. Our state of the art algorithm and high quality training data will give the best result for you according to your needs.</p>
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="check-li">
+							<li>Active Learning by user feedback</li>
+							<li>Intent Classification & Semantic Parsing</li>
+							<li>Entity Recognition & Resolution</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="check-li">
+							<li>Constraint-based reasoning</li>
+							<li>Sentiment Analysis of expert Reviews</li>
+							<li>Personalized Recommendo Score</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="col-2 flex-img" style="background-image: url(/static/images/img_bg_2.jpg);"></div>
+	</div>
+
+	<div class="gtco-cover gtco-cover-sm" style="background-image: url(/static/images/img_bg_3.jpg)" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container text-center">
+			<div class="display-t">
+				<div class="display-tc">
+					<h1 class="animate-box">One algorithm to rule them all</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="overflow-hid">
+		<div class="gtco-section">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<h2>Scalability</h2>
+
+					</div>
+				</div>
+				<div class="row">
 
 
 
 
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a  class="gtco-card-item">
+							<figure>
+								<div class="overlay"><i class=""></i></div>
+								<img src="/static/images/img_1.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="gtco-text">
+								<h2>Automobiles</h2>
+								<p>Selection of a car from a wide range of manufacturers and classes becomes cumbersome. We are here to help.</p>
+							</div>
+						</a>
+					</div>
 
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a  class="gtco-card-item">
+							<figure>
+								<div class="overlay"><i class=""></i></div>
+								<img src="/static/images/img_2.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="gtco-text">
+								<h2>Real Estate</h2>
+								<p>Our scalable model will soon help you to find your draem house at a location that is perfect for you.</p>
 
+							</div>
+						</a>
+					</div>
 
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a  class="gtco-card-item">
+							<figure>
+								<div class="overlay"><i class=""></i></div>
+								<img src="/static/images/img_3.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="gtco-text">
+								<h2>Electronics</h2>
+								<p>Not only phones, soon our algorithms will work with a wide range if electronics such as headphones, laptops, speakers.</p>
+							</div>
+						</a>
+					</div>
 
-                                        </div>
-                                    </div>
-                                </li>
+				</div>
+			</div>
+		</div>
 
-                                <li>
+		<div id="gtco-features">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+						<h2>Our Plan</h2>
 
-
-                                    <div class="sub-mnu">
-
-					<div style="width: 50%;margin: auto;">
-						<div class="row" style="float: left;">
-						    <div class="wmn-btn">
-
-
-							    <a class="sds-btn" href="/uno/question/">Get Started!</a>
-						    </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i>1</i>
+							</span>
+							<h3>Design</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.</p>
 						</div>
-
-						<div class="row" style="float: right;">
-
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i>2</i>
+							</span>
+							<h3>Develop</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i>3</i>
+							</span>
+							<h3>Launch</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i>4</i>
+							</span>
+							<h3>Scale</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.</p>
 						</div>
 					</div>
 
-                                    </div>
 
-				</li>
-
-									</a>
-
-								</li>
-                            </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-
-
-<div class="custom_right">
-    <section class="banner_section">
- <div id="owl-demo" class="owl-carousel">
-                <div class="item">
-<div class="bn-sctin">
-<div class="ban-cptn">
-
-
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-
-<div> </div>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-
-<br></br>
-<h5> </h5>
-<div>      </div>
-<div><a class="wmn-gn-btn" href="/uno/questions/" style="line-height: 1.6em;">Get Started!</a><span style="line-height: 1.6em;">
-</div>
-</div><div class="item">
-<div class="bn-sctin">
-<div class="ban-cptn">
-<h3> </h3>
-
-<h3> </h3>
-
-<h3> </h3>
-
-
-
-</div>
-<img alt="" src="https://u.imageresize.org/9be45537-5382-49cb-8f7e-23ffa777b054.png" style="height: 480px; width: 1920px;" /></div>
-</div>            </div>
-
-    </section>
+	<div class="gtco-cover gtco-cover-sm" style="background-image: url(/static/images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="gtco-container text-center">
+			<div class="display-t">
+				<div class="display-tc">
+					<h1>Don't take our word for it, take theirs.!</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="gtco-counter" class="gtco-section" style="
+    padding-top: 0px;
+    padding-bottom: 0px;
+">
+		<div id="myspecialdiv" style="width:100%; height:510px; ">
+   		 	<iframe width="100%" height="100%" frameborder="0" src="/static/Datarc-master\index.html" allowfullscreen scrolling="no"></iframe>
+		</div>
+	</div>
 
 
 
 
 
-    <div class="ipsm-sctn">
-        <div class="container clearfix">
+	<div id="gtco-counter" class="gtco-section">
+		<div class="gtco-container">
 
-<div class="sed-outr bst-st-outr" style="padding-top: 0;">
-<div class="row">
-<div class="col-sm-3 algn-cntr">&nbsp;</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2>Facts</h2>
 
-<div class="col-sm-6 algn-cntr">
-<figure><!-- <div class="rvw">
-                                                                    <div class="bst-stl-tbl">
-                                                                            5,246 <br /> Reviews
-                                                                    </div>
-                                                            </div>--><img alt="" src="http://gadgetbox.us/assets/images/pro2.png" /></figure>
+				</div>
+			</div>
 
-</div>
-</div>
-</div>
-</div>
-    </div>
+			<div class="row">
 
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="1300" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Recommedations</span>
 
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="97" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Nights</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="155" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Coffee</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="feature-center">
+						<span class="counter js-counter" data-from="0" data-to="12202" data-speed="5000" data-refresh-interval="50">1</span>
+						<span class="counter-label">Line of codes</span>
 
-</div>
+					</div>
+				</div>
 
-
-<script>
-
-//   		$(function() {
-//		    function moveFloatMenu() {
-//		        var menuOffset = menuYloc.top + $(this).scrollTop() + "px";
-//		        $('#floatMenu').animate({
-//		            top: menuOffset
-//		        }, {
-//		            duration: 500,
-//		            queue: false
-//		        });
-//		    }
-//
-//		    menuYloc = $('#floatMenu').offset();
-//
-//		    $(window).scroll(moveFloatMenu);
-//
-//		    moveFloatMenu();
-//		});
-   	</script>
-   	<script src="https://www.gadgetbox.us/assets/js/owl.carousel.js"></script>
-   	<script>
-	    $(document).ready(function() {
-	      $("#owl-demo").owlCarousel({
-
-	      navigation : true,
-	      slideSpeed : 300,
-	      paginationSpeed : 400,
-	      singleItem : true
-
-	      // "singleItem:true" is a shortcut for:
-	      // items : 1,
-	      // itemsDesktop : false,
-	      // itemsDesktopSmall : false,
-	      // itemsTablet: false,
-	      // itemsMobile : false
-
-	      });
-	    });
+			</div>
+		</div>
+	</div>
 
 
 
 
-	    $(document).ready(function() {
-	      $("#owl-demo2").owlCarousel({
 
-	      navigation : true,
-	      slideSpeed : 300,
-	      paginationSpeed : 400,
-	      singleItem : true
+	<footer id="gtco-footer" role="contentinfo" style="
+    padding-top: 5px;
+    padding-bottom: 5px;
+">
+		<div class="gtco-container">
 
-	      // "singleItem:true" is a shortcut for:
-	      // items : 1,
-	      // itemsDesktop : false,
-	      // itemsDesktopSmall : false,
-	      // itemsTablet: false,
-	      // itemsMobile : false
 
-	      });
-	    });
-    </script>
-	<!--<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54f408ea0dd29159" async="async"></script>
-	<div style="position: fixed;
-  top: 0;
-  background: rgba(0,0,255,0.7);
-  z-index: 99999;
-  height: 86px;
-  width: 100%;
-  text-align: center;" class="alert alert-danger alert-dismissible fade in" role="alert"><h4 style="font-size: 25px;color: #fff;">Temporarily Unavailable. We are not conducting or accepting any new business at this time.</h4></div>-->
-</body>
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; 2018 Recommendo. All Rights Reserved.</small>
+						<small class="block">Designed by <a href="http:///" target="_blank">Garv Sachdeva</a> </small>
+					</p>
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/static/js/jquery.waypoints.min.js"></script>
+	<script src="/static/js/sticky.js"></script>
+	<!-- Carousel -->
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="/static/js/jquery.countTo.js"></script>
+
+	<!-- Stellar Parallax -->
+	<script src="/static/js/jquery.stellar.min.js"></script>
+
+	<!-- Magnific Popup -->
+	<script src="/static/js/jquery.magnific-popup.min.js"></script>
+	<script src="/static/js/magnific-popup-options.js"></script>
+
+	<!-- Main -->
+	<script src="/static/js/main.js"></script>
+	<script type="text/javascript">
+
+$(document).ready(function() {
+
+  $("#owl-demo").owlCarousel({
+
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+
+
+  });
+
+});
+function myFunction() {
+
+    var h1 = document.getElementsByTagName("iframe")[0];
+    var att = document.createAttribute("scrolling");
+    att.value = "no";
+    h1.setAttributeNode(att);
+
+}
+
+
+
+
+	</script>
+
+	</body>
 </html>

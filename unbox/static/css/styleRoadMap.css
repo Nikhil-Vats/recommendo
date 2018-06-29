@@ -1,0 +1,332 @@
+/*
+* ROADMAP CSS
+*/
+
+#roadmap__container {
+  position: relative;
+    background-color: black;
+    padding-top:20vh;
+    
+}
+
+#roadmap {
+  padding: 0;
+  position: relative;
+  margin: 20px auto 0 auto;
+  list-style: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+#roadmap #endpoint {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: seagreen;
+}
+
+#roadmap::before {
+  content: "";
+  background-color: #252525;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translate3D(-50%, 0, 0);
+  z-index: 0;
+  width: 2px;
+}
+
+#roadmap .__year {
+  display: table;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 25px;
+  border-radius: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  border: 1px solid seagreen;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#roadmap .__item {
+  width: 100%;
+  position: relative;
+}
+
+#roadmap .__item .text {
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+  background-color: black;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4),
+    2px 4px 9px 5px rgba(0, 0, 0, 0.09);
+}
+
+#roadmap .__item .text b {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #252525;
+}
+
+#roadmap .__item .text span {
+  color: #a7a7a7;
+  font-size: 1.13em;
+}
+
+#roadmap .__item .text hr {
+  margin: 20px 0;
+}
+
+#roadmap .__item .text .__ongoing {
+  display: table;
+  margin-top: 10px;
+  background: seagreen;
+  clear: both;
+  padding: 8px;
+  color: #252525;
+    border-radius: 9px;
+}
+
+#roadmap .__item.__left {
+  text-align: left;
+  transform: translateZ(0) translateX(-200%);
+  transition: transform 0.6s ease;
+}
+
+#roadmap .__item.__right {
+  text-align: right;
+  transform: translateZ(0) translateX(200%);
+  transition: transform 0.6s ease;
+}
+
+#roadmap .__item.__left .text {
+  border-right: 5px solid seagreen;
+}
+
+#roadmap .__item.__right .text {
+  border-left: 4px solid seagreen;
+}
+
+#roadmap .__item.__left .connector,
+#roadmap .__item.__right .connector {
+  width: 0;
+  transition: width 0.4s ease;
+  will-change: width;
+}
+
+#roadmap .__item.__left .connector {
+  position: absolute;
+  background-color: #252525;
+  height: 2px;
+  bottom: 50%;
+}
+
+#roadmap .__item.__right .connector {
+  position: absolute;
+  background-color: #252525;
+  height: 2px;
+  bottom: 50%;
+}
+
+#roadmap .__item.__left .connector::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: 4px solid seagreen;
+  background-color: #fff;
+  border-radius: 50%;
+  left: -12px;
+  transform: translate3d(0, -50%, 0);
+}
+
+#roadmap .__item.__left .connector::after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border: 2px solid seagreen;
+  background-color: #fff;
+  border-radius: 50%;
+  right: -6px;
+  z-index: 3;
+  transform: translate3d(0, -50%, 0);
+}
+
+#roadmap .__item.__right .connector::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: 4px solid seagreen;
+  background-color: #fff;
+  border-radius: 50%;
+  right: -12px;
+  transform: translate3d(0, -50%, 0);
+}
+
+#roadmap .__item.__right .connector::after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border: 2px solid seagreen;
+  background-color: #fff;
+  border-radius: 50%;
+  left: -6px;
+  z-index: 3;
+  transform: translate3d(0, -50%, 0);
+}
+
+#roadmap .__goals .__the_goals {
+  display: block;
+  width: 300px;
+  margin: 100px auto 50px auto;
+  padding: 20px 0;
+  background: green;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+#roadmap .__goals .__the_goals:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  border-bottom: 25px solid seagreen;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+}
+#roadmap .__goals .__the_goals:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  border-top: 25px solid seagreen;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  filter: drop-shadow(0px 14px 3px rgba(0, 0, 0, 0.5));
+}
+#roadmap .__goals .__the_goals b {
+  display: block;
+  margin-top: 65px;
+  font-size: 1.4em;
+}
+#roadmap .__goals .__the_goals ul {
+  padding: 0 50px;
+  text-align: left;
+  font-size: 1.2em;
+}
+#roadmap .__goals .__the_goals ul li {
+  padding: 0;
+  margin: 5px 0;
+  list-style-type: disc;
+}
+#roadmap .__goals .__coin {
+  position: absolute;
+  width: 150px;
+  left: 50%;
+  top: -75px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0px 0px 10px rgba(247, 255, 255, 0.3));
+
+  z-index: 4;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width: 850px) {
+  #roadmap::before {
+    left: 0;
+    top: 50px;
+    height: calc(100% - 50px);
+  }
+
+  #roadmap #endpoint {
+    left: 0;
+  }
+
+  #roadmap .__year {
+    display: table;
+    margin: 0;
+  }
+
+  #roadmap .__item {
+    display: inline-block;
+  }
+
+  #roadmap .__item .connector {
+    width: 23px;
+    left: 3px;
+    z-index: 3;
+  }
+
+  #roadmap .__item .text {
+    width: 75%;
+    float: right;
+    margin: 30px 0;
+  }
+
+  #roadmap .__item.__left .text {
+    border-right: none;
+    border-left: 4px solid seagreen;
+  }
+
+  #roadmap .__item.__right {
+    text-align: left;
+    transform: translateX(0);
+  }
+
+  #roadmap .__item.__left {
+    transform: translateX(0);
+  }
+
+  #roadmap .__item.__left .connector {
+    transform: rotateY(180deg);
+  }
+
+  #roadmap .__item.__right .connector::after {
+    left: -9px;
+  }
+
+  #roadmap .__item.__right .connector::before {
+    right: -8px;
+  }
+
+  #roadmap .__item.__left .connector::before {
+    left: -8px;
+  }
+
+  #roadmap .__item.__left .connector::after {
+    right: -9px;
+  }
+  #roadmap .__goals > .__the_goals,
+  #roadmap .__goals .__coin {
+    opacity: 1;
+  }
+  #roadmap .__goals .__coin {
+    top: 20px;
+  }
+  #roadmap .__goals .__prettify {
+    position: absolute;
+    width: 100%;
+    background: #252525;
+    height: 100px;
+    top: 50%;
+  }
+}

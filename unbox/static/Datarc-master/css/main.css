@@ -6,6 +6,9 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+.img-team {
+    border-radius: 50%;
+}
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #cccccc;
